@@ -97,7 +97,7 @@ static const char *dmenucmd[]    = { "dmenu_run", "-p", "Run: ", NULL };
 static const char *termcmd[]     = { "st", NULL };
 /* An alternative way to launch st along with the fish shell */
 /* static const char *termcmd[]     = { "st", "-e fish", NULL }; */
-static const char *tabtermcmd[]  = { "tabbed", "-r 2", "st", "-w", "''", NULL };
+static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
 
 static Key keys[] = {
 	/* modifier             key        function        argument */
