@@ -88,7 +88,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]    = { "dmenu_run", "-p", "Run: ", NULL };
+/* An alternative way to launch dmenu in one row rather 48 rows */
+/* static const char *dmenucmd[]    = { "dmenu_run", "-p", "Run: ", NULL }; */
+static const char *dmenucmd[]    = { "dmenu_run", "-g", "10", "-l", "48", "-p", "Run: ", NULL };
 /* An alternative way to launch st along with the fish shell */
 /* static const char *termcmd[]     = { "st", "-e fish", NULL }; */
 static const char *termcmd[]     = { "st", NULL };
