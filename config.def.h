@@ -86,14 +86,17 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-/* commands */
+/* dmenu */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-/* An alternative way to launch dmenu in one row rather 48 rows */
-/* static const char *dmenucmd[]    = { "dmenu_run", "-p", "Run: ", NULL }; */
-static const char *dmenucmd[]    = { "dmenu_run", "-g", "10", "-l", "48", "-p", "Run: ", NULL };
+/* If you are using the standard dmenu program, use the following. */
+static const char *dmenucmd[]    = { "dmenu_run", "-p", "Run: ", NULL };
+/* If you are using the dmenu-distrotube-git program, use the following for a cooler dmenu! */
+/* static const char *dmenucmd[]    = { "dmenu_run", "-g", "10", "-l", "48", "-p", "Run: ", NULL }; */
+
+/* the st terminal with tabbed */
+static const char *termcmd[]     = { "st", NULL };
 /* An alternative way to launch st along with the fish shell */
 /* static const char *termcmd[]     = { "st", "-e fish", NULL }; */
-static const char *termcmd[]     = { "st", NULL };
 static const char *tabtermcmd[]  = { "tabbed", "-r 2", "st", "-w", "''", NULL };
 
 static Key keys[] = {
