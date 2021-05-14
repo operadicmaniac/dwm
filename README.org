@@ -1,5 +1,20 @@
 #+TITLE: dwm-distrotube
 
+* Table of Contents :toc:
+- [[#about-dwm][About DWM]]
+  - [[#the-patches-i-added-to-this-build-include][The patches I added to this build include:]]
+  - [[#the-dependencies-for-dwm-distrotube-include][The dependencies for dwm-distrotube include:]]
+- [[#installing-dwm-distrotube-on-arch-linux][Installing dwm-distrotube on Arch Linux]]
+- [[#installing-dwm-distrotube-on-other-linux-distributions][Installing dwm-distrotube on other Linux distributions]]
+- [[#my-keybindings][My Keybindings]]
+  - [[#main-keybindings][Main keybindings]]
+  - [[#layout-controls][Layout controls]]
+  - [[#application-controls][Application controls]]
+  - [[#doom-emacs][Doom emacs]]
+- [[#running-dwm][Running dwm]]
+- [[#configuring-dwm-distrotube][Configuring dwm-distrotube]]
+- [[#adding-an-autostart-file][Adding an autostart file]]
+
 * About DWM
 #+CAPTION: dmenu-distrotube
 #+ATTR_HTML: :alt dmenu-distrotube :title dmenu-distrotube :align left
