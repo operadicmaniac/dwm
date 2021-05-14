@@ -1,7 +1,13 @@
-# My dwm (dynamic window manager) build
+#+TITLE: dwm-distrotube
 
-![Screenshot of my desktop](https://gitlab.com/dwt1/dotfiles/raw/master/.screenshots/dotfiles04.png) 
-Dwm is an extremely fast, small, and dynamic window manager for X. Dwm is created by the good folks at [suckless.org](https://suckless.org).  This is my personal build of dwm.  I used a number of patches in this build to make dwm more "sensible" rather than "suckless."  The patches I added to this build include:
+* About DWM
+#+CAPTION: dmenu-distrotube
+#+ATTR_HTML: :alt dmenu-distrotube :title dmenu-distrotube :align left
+https://gitlab.com/dwt1/dotfiles/raw/master/.screenshots/dotfiles04.png
+
+Dwm is an extremely fast, small, and dynamic window manager for X. Dwm is created by the good folks at [suckless.org](https://suckless.org).  This is my personal build of dwm.  I used a number of patches in this build to make dwm more "sensible" rather than "suckless."
+
+** The patches I added to this build include:
 + alpha (for transparency)
 + attachaside (new clients appear in the stack rather than as the master)
 + cyclelayouts (cycles through the available layouts)
@@ -11,7 +17,7 @@ Dwm is an extremely fast, small, and dynamic window manager for X. Dwm is create
 + statuspadding (horizontal and vertical padding in the status bar are now configurable options)
 + uselessgap (adding gaps when more than one window)
 
-# Dependencies
+** The dependencies for dwm-distrotube include:
 + libxft
 + ttf-hack
 + ttf-joypixels
@@ -25,39 +31,47 @@ Also, you will need to add the following from the AUR:
 
 Also, if you are building this on an Ubuntu-based system, you need to install libx11-dev and xorg-dev.
 
-# Installing dwm-distrotube on Arch Linux
-
+* Installing dwm-distrotube on Arch Linux
 All you need to do is download the PKGBUILD from this repository.  Then run the following command:
 
-	makepkg -cf
-	
+=makepkg -cf=
+
 This will create a file that ends in .pkg.tar.xz (for example, dwm-distrotube-git-6.2-1-x86_64.pkg.tar.xz).  Then run:
 
-	sudo pacman -U *.pkg.tar.xz 
-	
-Alternately, you could also install dwm-distrotube-git from the AUR using an AUR helper such as yay:
+=sudo pacman -U *.pkg.tar.xz=
 
-	yay dwm-distrotube-git
-	
-NOTE: Installing dwm-distrotube-git conflicts with the standard dwm package.  If you already have dwm installed, you will be asked if you want to remove dwm and install dwm-distrotube-git instead. 
-	
-	
-# Installing dwm-distrotube on other Linux distributions
+Alternatively, you could also install dwm-distrotube-git from my own personal Arch repository.  To do so, add the following to the end of /etc/pacman.conf :
 
+#+begin_example
+[dt-arch-repo]
+SigLevel = Optional DatabaseOptional
+Server = https://gitlab.com/dwt1/$repo/-/raw/master/$arch
+#+end_example
+
+Then, sync the repositories and update your system with:
+=sudo pacman -Syyu=
+
+And, then:
+=sudo pacman -S dwm-distrotube-git=
+
+=NOTE:= Installing dwm-distrotube-git conflicts with the standard dwm package.  If you already have dwm installed, you will be asked if you want to remove dwm and install dwm-distrotube-git instead.
+
+
+* Installing dwm-distrotube on other Linux distributions
 Download the source code from this repository or use a git clone:
 
-	git clone https://gitlab.com/dwt1/dwm-distrotube.git
-	cd dwm-distrotube
-    sudo make clean install
-	
-NOTE: Installing dwm-distrotube will overwrite your existing dwm installation.
-	
-# My Keybindings
+#+begin_example
+git clone https://gitlab.com/dwt1/dwm-distrotube.git
+cd dwm-distrotube
+sudo make clean install
+#+end_example
 
-The MODKEY is set to the Super key (aka the Windows key).  I try to keep the
-keybindings consistent with all of my window managers, but if you several of my window manager configs, there may be some discrepancies between them.
+=NOTE:= Installing dwm-distrotube will overwrite your existing dwm installation.
 
-## Main keybindings
+* My Keybindings
+The MODKEY is set to the Super key (aka the Windows key).  I try to keep the keybindings consistent with all of my window managers, but if you several of my window manager configs, there may be some discrepancies between them.
+
+** Main keybindings
 
 | Keybinding | Action |
 | :--- | :--- |
@@ -78,7 +92,7 @@ keybindings consistent with all of my window managers, but if you several of my 
 | `MODKEY + .` | focusmon +1 (switches focus next monitors) |
 | `MODKEY + ,` | focusmon -1 (switches focus to prev monitors) |
 
-## Layout controls
+** Layout controls
 
 | Keybinding | Action |
 | :--- | :--- |
@@ -93,7 +107,7 @@ keybindings consistent with all of my window managers, but if you several of my 
 | `MODKEY + m` | layout 3 |
 | `MODKEY + g` | layout 4 |
 
-## Application controls
+** Application controls
 
 | Keybinding | Action |
 | :--- | :--- |
@@ -102,7 +116,7 @@ keybindings consistent with all of my window managers, but if you several of my 
 | `MODKEY + ALT + m` | open [mailspring](https://github.com/Foundry376/Mailspring) |
 | `MODKEY + ALT + f` | open [pcmanfm (PaCMANFileManager)](https://wiki.archlinux.org/title/PCManFM) |
 
-## Doom emacs
+** Doom emacs
 
 | Keybinding | Action |
 | :--- | :--- |
@@ -114,38 +128,39 @@ keybindings consistent with all of my window managers, but if you several of my 
 | `CTRL + e + s` | `emacsclient -c -a 'emacs' --eval '(eshell)'` |  
 | `CTRL + e + v` | `emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'` |
 
-# Running dwm
-
+* Running dwm
 If you do not use a login manager (such as lightdm) then you can add the following line to your .xinitrc to start dwm using startx:
 
-    exec dwm
-	
+=exec dwm=
+
 If you use a login manager (like lightdm), make sure that you have a file called dwm.desktop in your /usr/share/xsessions/ directory.  It should look something like this:
 
-	[Desktop Entry]
-	Encoding=UTF-8
-	Name=Dwm
-	Comment=Dynamic window manager
-	Exec=dwm
-	Icon=dwm
-	Type=XSession
+#+begin_example
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dwm
+Comment=Dynamic window manager
+Exec=dwm
+Icon=dwm
+Type=XSession
+#+end_example
 
+* Configuring dwm-distrotube
 
-# Configuring dwm-distrotube
+If you installed dwm-distrotube-git with pacman, then the source code can be found in /opt/dwm-distrotube-git.  If you downloaded the source and built dwm-distrotube yourself, then the source is in the directory that you downloaded.  The configuration of dwm-distrotube is done by editing the config.def.h and (re)compiling the source code.
 
-If you installed dwm-distrotube-git using the AUR, then the source code can be found in /opt/dwm-distrotube-git.  If you downloaded the source and built dwm-distrotube yourself, then the source in the directory that you downloaded.  The configuration of dwm-distrotube is done by editng the config.h and (re)compiling the source code.  
-
-	sudo make install
+=sudo make install=
 	
-# Adding an autostart file
-
+* Adding an autostart file
 dwm-distrotube has been patched in such a way that it looks for an autostart file at: $HOME/.dwm/autostart.sh
 
 You will need to create this file and the directory that it is located.  An example autostart.sh is included below:
 
-	#! /bin/bash 
-	compton &
-	nitrogen --restore &
-	dwmblocks &
-	
+#+begin_example
+#! /bin/bash
+compton &
+nitrogen --restore &
+dwmblocks &
+#+end_example
+
 The example autostart.sh above launches the compton compositor, sets the wallpaper with nitrogen and launches dwmblocks to add some widgets to our dwm panel.  Obviously, you would need to install compton and nitrogen to use those programs in your autostart.  And you would need to install [dwmblocks](https://gitlab.com/dwt1/dotfiles/-/tree/master/dwmblocks) to use it.  To use my dwmblocks, you also need to download the scripts found [here](https://gitlab.com/dwt1/dotfiles/-/tree/master/.local%2Fbin).
