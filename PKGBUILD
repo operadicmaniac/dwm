@@ -37,7 +37,7 @@ package() {
   cp -rf * ${pkgdir}/opt/${pkgname}
   make PREFIX=/usr DESTDIR="${pkgdir}" install
   install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/dwm-distrotube/LICENSE"
-  install -Dm644 README.md "${pkgdir}/usr/share/doc/dwm-distrotube/README.md"
+  install -Dm644 README.org "${pkgdir}/usr/share/doc/dwm-distrotube/README.org"
   install -Dm644 "${srcdir}/dwm-distrotube/dwm.desktop" "$pkgdir/usr/share/xsessions/dwm.desktop"
 }
 
