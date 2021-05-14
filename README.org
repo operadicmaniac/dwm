@@ -158,7 +158,7 @@ You will need to create this file and the directory that it is located.  An exam
 
 #+begin_example
 #! /bin/bash
-compton &
+picom &
 nitrogen --restore &
 dwmblocks &
 #+end_example
