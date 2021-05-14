@@ -71,7 +71,6 @@ And, then:
 
 =NOTE:= Installing dwm-distrotube-git conflicts with the standard dwm package.  If you already have dwm installed, you will be asked if you want to remove dwm and install dwm-distrotube-git instead.
 
-
 * Installing dwm-distrotube on other Linux distributions
 Download the source code from this repository or use a git clone:
 
