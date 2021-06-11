@@ -145,13 +145,13 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,      -1,        XK_f,      spawn,          CMD("pcmanfm") },
 	
     /* Dmenu scripts launched with emacs-style keychords SUPER + p followed by "key" */
-	{ MODKEY,               XK_p,      XK_e,      spawn,          CMD("./dmscripts/dmconf") },
-	{ MODKEY,               XK_p,      XK_i,      spawn,          CMD("./dmscripts/dmscrot") },
-	{ MODKEY,               XK_p,      XK_k,      spawn,          CMD("./dmscripts/dmkill") },
-	{ MODKEY,               XK_p,      XK_l,      spawn,          CMD("./dmscripts/dmlogout") },
-	{ MODKEY,               XK_p,      XK_m,      spawn,          CMD("./dmscripts/dman") },
-	{ MODKEY,               XK_p,      XK_r,      spawn,          CMD("./dmscripts/dmred") },
-	{ MODKEY,               XK_p,      XK_s,      spawn,          CMD("./dmscripts/dmsearch") },
+	{ MODKEY,               XK_p,      XK_e,      spawn,          CMD("./dmscripts/dm-confedit") },
+	{ MODKEY,               XK_p,      XK_i,      spawn,          CMD("./dmscripts/dm-maim") },
+	{ MODKEY,               XK_p,      XK_k,      spawn,          CMD("./dmscripts/dm-kill") },
+	{ MODKEY,               XK_p,      XK_l,      spawn,          CMD("./dmscripts/dm-logout") },
+	{ MODKEY,               XK_p,      XK_m,      spawn,          CMD("./dmscripts/dm-man") },
+	{ MODKEY,               XK_p,      XK_r,      spawn,          CMD("./dmscripts/dm-reddit") },
+	{ MODKEY,               XK_p,      XK_s,      spawn,          CMD("./dmscripts/dm-websearch") },
 	{ MODKEY,               XK_p,      XK_p,      spawn,          CMD("passmenu") },
     
     /* Doom emacs keybindings use the keychord CTRL + e followed by "key" */
