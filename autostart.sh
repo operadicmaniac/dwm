@@ -1,7 +1,6 @@
 #! /bin/bash
 lxsession &
 picom &
-nitrogen --restore &
 dwmblocks &
 /usr/bin/emacs --daemon &
 
