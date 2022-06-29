@@ -111,8 +111,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     -1,        XK_k,      rotatestack,    {.i = -1 } },
 	{ MODKEY,               -1,        XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,               -1,        XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,               -1,        XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,               -1,        XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,     -1,        XK_Up,     incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,     -1,        XK_Down,   incnmaster,     {.i = -1 } },
 	{ MODKEY,               -1,        XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,               -1,        XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ControlMask,   -1,        XK_Return, zoom,           {0} },
@@ -140,12 +140,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     -1,        XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,     -1,        XK_period, tagmon,         {.i = +1 } },
 	
-    /* Keybindings for programs using the format SUPER + ALT + "key" */
+    /* Favorite programs */
+	{ MODKEY,               -1,        XK_b,      spawn,          CMD("qutebrowser") },
 	{ MODKEY|Mod1Mask,      -1,        XK_s,      spawn,          CMD("tabbed -r 2 surf -pe x '.surf/html/homepage.html'") },
-	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("brave") },
-	{ MODKEY|Mod1Mask,      -1,        XK_m,      spawn,          CMD("mailspring") },
-	{ MODKEY|Mod1Mask,      -1,        XK_f,      spawn,          CMD("pcmanfm") },
-	
+
     /* Dmenu scripts launched with emacs-style keychords SUPER + p followed by "key" */
 	{ MODKEY,               XK_p,      XK_e,      spawn,          CMD("./dmscripts/dm-confedit") },
 	{ MODKEY,               XK_p,      XK_i,      spawn,          CMD("./dmscripts/dm-maim") },
@@ -156,14 +154,16 @@ static Key keys[] = {
 	{ MODKEY,               XK_p,      XK_s,      spawn,          CMD("./dmscripts/dm-websearch") },
 	{ MODKEY,               XK_p,      XK_p,      spawn,          CMD("passmenu") },
     
-    /* Doom emacs keybindings use the keychord CTRL + e followed by "key" */
-	{ ControlMask,          XK_e,      XK_e,      spawn,          CMD("emacsclient -c -a 'emacs'") },
-	{ ControlMask,          XK_e,      XK_b,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(ibuffer)'") },
-	{ ControlMask,          XK_e,      XK_d,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(dired nil)'") },
-	{ ControlMask,          XK_e,      XK_m,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(mu4e)'") },
-	{ ControlMask,          XK_e,      XK_n,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(elfeed)'") },
-	{ ControlMask,          XK_e,      XK_s,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(eshell)'") },
-	{ ControlMask,          XK_e,      XK_v,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'") },
+    /* Doom emacs keybindings use the keychord SUPER + e followed by "key" */
+	{ MODKEY,               XK_e,      XK_e,      spawn,          CMD("emacsclient -c -a 'emacs'") },
+	{ MODKEY,               XK_e,      XK_a,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/\")'") },
+	{ MODKEY,               XK_e,      XK_b,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(ibuffer)'") },
+	{ MODKEY,               XK_e,      XK_d,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(dired nil)'") },
+	{ MODKEY,               XK_e,      XK_i,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(erc)'") },
+	{ MODKEY,               XK_e,      XK_n,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(elfeed)'") },
+	{ MODKEY,               XK_e,      XK_s,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(eshell)'") },
+	{ MODKEY,               XK_e,      XK_v,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'") },
+	{ MODKEY,               XK_e,      XK_w,      spawn,          CMD("emacsclient -c -a 'emacs' --eval '(doom/window-maximize-buffer(eww \"distro.tube\"))'") },
 
 	TAGKEYS(                -1,        XK_1,                      0)
 	TAGKEYS(                -1,        XK_2,                      1)
