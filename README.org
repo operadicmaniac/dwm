@@ -1,4 +1,4 @@
-#+TITLE: dwm-distrotube
+(apply this patch if you want it https://dwm.suckless.org/patches/statusallmons/)
 
 * Table of Contents :toc:
 - [[#about-dwm][About DWM]]
